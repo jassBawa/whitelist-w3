@@ -1,0 +1,1 @@
+export const SIGN_MESSAGE = 'Welcome to Aiden Whitelist! Please sign this message to verify your wallet.';
