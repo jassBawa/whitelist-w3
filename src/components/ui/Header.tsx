@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import useClickOutside from '@/hooks/useClickOutside';
 import useIsMounted from '@/hooks/useIsMounted';
 import { motion } from 'framer-motion';
@@ -43,17 +43,13 @@ function Header() {
       if (response.ok) {
         toast.success('Disconnected successfully');
         disconnect();
-        router.push('/'); // Redirect after successful logout
-      } else {
-        console.error('Failed to disconnect');
-        toast.error('Failed to disconnect');
       }
     } catch (err) {
       console.error('Error: ', err);
       toast.error('An error occurred while disconnecting');
     } finally {
       setIsOpen(false);
-
+      router.push('/');
       setIsLoading(false);
     }
   }, [router, disconnect]);
