@@ -1,3 +1,4 @@
+"use client"
 import useClickOutside from '@/hooks/useClickOutside';
 import useIsMounted from '@/hooks/useIsMounted';
 import { motion } from 'framer-motion';
@@ -40,7 +41,7 @@ function Header() {
       });
 
       if (response.ok) {
-        toast.success('Disconnected and session cleared');
+        toast.success('Disconnected successfully');
         disconnect();
         router.push('/'); // Redirect after successful logout
       } else {
@@ -60,7 +61,7 @@ function Header() {
   if (!isMounted) return null; // Prevent SSR mismatch
 
   return (
-    <header className="container mx-auto px-4 py-6 flex justify-between items-center">
+    <header className="container mx-auto px-4 py-6 flex justify-between items-center relative z-20">
       <Link href="/" className="flex items-center gap-2">
         <div className="w-6 h-6 bg-white mask mask-triangle" />
         <span className="text-lg text-white font-medium">Aiden</span>

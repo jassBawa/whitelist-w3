@@ -34,7 +34,7 @@ export async function POST(req: Request) {
 
     return response;
   } catch (err) {
-    console.error(err);
+    console.error('err: ', err);
     return NextResponse.json({ error: 'Verification failed' }, { status: 500 });
   }
 }
